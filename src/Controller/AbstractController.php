@@ -1,7 +1,8 @@
 <?php
 
-namespace Siad007\ZendExpressive\GraphQL\Middleware;
+namespace Siad007\ZendExpressive\GraphQL\Controller;
 
+use Interop\Container\ContainerInterface;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -10,6 +11,18 @@ use Zend\Diactoros\Response;
 
 abstract class AbstractController implements MiddlewareInterface
 {
+    private $container;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
+    protected function get($service)
+    {
+        return $this->container->get($service);
+    }
+
     /**
      * Process an incoming server request and return a response, optionally delegating
      * to the next middleware component to create the response.
