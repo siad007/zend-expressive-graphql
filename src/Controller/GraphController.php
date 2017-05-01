@@ -6,6 +6,8 @@ use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Siad007\ZendExpressive\GraphQL\Request\BatchParser;
+use Siad007\ZendExpressive\GraphQL\Request\Executor;
 use Siad007\ZendExpressive\GraphQL\Request\Parser;
 use Zend\Diactoros\Response;
 
