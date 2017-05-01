@@ -1,0 +1,16 @@
+{
+  "name": "Idealo/zend-expressive-graphql",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Siad Ardroumli",
+      "email": "siad.ardroumli@idealo.de"
+    }
+  ],
+  "require": {
+    "webonyx/graphql-php": "^0.9",
+    "react/promise": "^2.5"
+  }
+}
