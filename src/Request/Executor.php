@@ -9,6 +9,7 @@ use GraphQL\Validator\DocumentValidator;
 use GraphQL\Validator\Rules\QueryComplexity;
 use GraphQL\Validator\Rules\QueryDepth;
 use Siad007\ZendExpressive\GraphQL\Executor\ExecutorInterface;
+use Siad007\ZendExpressive\GraphQL\Executor\PromiseAdapterInterface;
 
 class Executor
 {
@@ -125,8 +126,8 @@ class Executor
                 throw new \RuntimeException(
                     sprintf(
                         'PromiseAdapter should be an object instantiating "%s" or "%s" with a "wait" method.',
-                        'Overblog\\GraphQLBundle\\Executor\\Promise\\PromiseAdapterInterface',
-                        'GraphQL\\Executor\\Promise\\PromiseAdapter'
+                        PromiseAdapterInterface::class,
+                        PromiseAdapter::class
                     )
                 );
             }
@@ -150,7 +151,7 @@ class Executor
             throw new \RuntimeException(
                 sprintf(
                     'Execution result should be an object instantiating "%s".',
-                    'GraphQL\\Executor\\ExecutionResult'
+                    ExecutionResult::class
                 )
             );
         }
