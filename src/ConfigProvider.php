@@ -10,9 +10,18 @@ class ConfigProvider
     public function __invoke()
     {
         return [
+            'dependencies' => $this->getDependencies(),
             'zend-expressive-graphql' => [
-                'some-setting' => 'default value',
+                'endpoint' => 'default value',
             ]
+        ];
+    }
+
+    public function getDependencies()
+    {
+        return [
+            'invokables' => [],
+            'factories' => [],
         ];
     }
 }

@@ -29,10 +29,6 @@ class ConfigProviderTest extends TestCase
     public function invokation()
     {
         $currConfigPro = $this->configProvider;
-        $this->assertSame([
-            'zend-expressive-graphql' => [
-                'some-setting' => 'default value',
-            ]
-        ], $currConfigPro());
+        $this->assertArrayHasKey('zend-expressive-graphql', $currConfigPro());
     }
 }
