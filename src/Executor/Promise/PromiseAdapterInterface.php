@@ -1,6 +1,6 @@
 <?php
 
-namespace Siad007\ZendExpressive\GraphQL\Executor;
+namespace Siad007\ZendExpressive\GraphQL\Executor\Promise;
 
 use GraphQL\Executor\ExecutionResult;
 use GraphQL\Executor\Promise\Promise;
